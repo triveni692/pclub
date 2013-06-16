@@ -1,0 +1,25 @@
+// Place all the styles related to the pclub controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {
+	background:url('b1.jpg') ;
+
+}
+
+#b1 {
+		height:80px;
+}
+
+#sticky.stick {
+
+  position: fixed;
+  top: 0;
+  z-index: 10000;width:100%;
+
+  }
+
+  #sticky {
+  	position: absolute;width: 100%;
+  }
