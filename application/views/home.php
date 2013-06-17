@@ -15,22 +15,17 @@
   <script src="js/vendor/custom.modernizr.js"></script>
   <script src="js/vendor/jquery.js"></script>
 
+
 </head>
-  <body style="background-color:#8AD1DD">
-<canvas id="canvas" style="position:absolute; z-index:1; left:0px; top:0px" height="0px" width="0px"></canvas>
-  <script src="js/background.js"></script>
+<body>
+    canvas id="canvas" style="position:absolute; z-index:1; left:0px; top:0px" height="0px" width="0px"></canvas>
+    <script type="text/javascript" src="js/bubbles.js"></script>
+    <div id="content">
+  robbin
 
 
 
-
-
-
-
-
-
-
-
-
+</div>
 
 
    <script>
@@ -56,31 +51,13 @@
   <script>
     $(document).foundation();
   </script>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+  <script>
+$('body').css('background-image', 'img/backgroud.jpg');
+
+  </script>
+
  </body>
 </html>
+
 
 
