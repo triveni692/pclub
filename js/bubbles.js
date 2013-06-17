@@ -1,8 +1,8 @@
 minRadius = 5;
-maxRadius = 100;
+maxRadius = 50;
 minVel = -3;
 maxVel = 3;
-maxNumberOfCircles = 30;
+maxNumberOfCircles = 60;
 circleColor = '#B3E1E5';
 
 	var browser = new checkBrowser();
@@ -133,18 +133,3 @@ function randomXToY(minVal,maxVal,floatVal){
   return typeof floatVal=='undefined'?Math.round(randVal):randVal.toFixed(floatVal);
 }
 
-function run()
-{
-// Set multicolour backgrounds
-window.setInterval( multicolour(), 300);
-}
-
-var colour = 0;
-var colours = Array('', 'pink', 'red', 'green', 'light');
-
-function multicolour()
-{
-    colour = (colour+1) % colours.length ;
-    $('body').attr('id', colours[colour]);
-    console.log(colour);
-}

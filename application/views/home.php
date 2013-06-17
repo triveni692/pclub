@@ -18,7 +18,7 @@
 
 </head>
 <body>
-    canvas id="canvas" style="position:absolute; z-index:1; left:0px; top:0px" height="0px" width="0px"></canvas>
+    <canvas id="canvas" style="position:absolute; z-index:1; left:0px; top:0px" height="0px" width="0px"></canvas>
     <script type="text/javascript" src="js/bubbles.js"></script>
     <div id="content">
   robbin
@@ -52,7 +52,7 @@
     $(document).foundation();
   </script>
   <script>
-$('body').css('background-image', 'img/backgroud.jpg');
+$('body').css('background-image', 'url("img/back.png")');
 
   </script>
 
