@@ -19,27 +19,29 @@
 <body>
  <canvas id="canvas" style="position:absolute; left:0px; top:0px" height="0px" width="0px";opacity:0.7;></canvas>
    <script src="js/test.js"></script>
-   <div class="row">
+   <div class="row" style="margin : 0">
   <div class="large-6 columns"><span class="secondary label"><h1 class="subheading">P-CLUB</h1></span></div>
   <div class="large-6 columns">
 <ul class="inline-list" style="float:right;">
-  <li><a href="#">Login</a></li>
-  <li><a href="#">Register</a></li>
+  <li><a href="#" data-reveal-id="myModal">Login</a></li>
+  <li><a href="#" data-reveal-id="myModal1">Register</a></li>
 </ul>
 
   </div>
 </div>
-<div class="button-bar">
-  <ul class="button-group">
-    <li><a href="#" class="large button alert">Home</a></li>
-    <li><a href="#" class="large button secondary ">Forum</a></li>
-    <li><a href="#" class="large button success">Online Judge</a></li>
-  </ul>
-  <ul class="button-group">
-    <li><a href="#" class="large button">Projects</a></li>
-    <li><a href="#" class="large button">Achivements</a></li>
-    <li><a href="#" class="large button">Contact</a></li>
-  </ul>
+<div id="sticky-anchor"></div>
+<div id="sticky">
+<ul class="button-group radius even-8">
+  <li><a href="#" class="button">Home</a></li>
+  <li><a href="#" class="button">Tutorial</a></li>
+  <li><a href="#" class="button">Projects</a></li>
+  <li><a href="#" class="button">Achivements</a></li>
+  <li><a href="#" class="button">Contact</a></li>
+  <li><a href="#" class="button">Forum</a></li>
+  <li><a href="#" class="button">Online Judge</a></li>
+  <li><a href="http://localhost/PCLUB/admin.php" class="button" target="_blank">Admin Login</a></li>
+</ul>
+
 </div>
 <hr>
 
@@ -73,7 +75,119 @@
   </script>
   <script>
 $('body').css('background-image', 'url(img/new.png")');
+function validateLoginForm()
+{
+  var x=document.forms['loginForm']['username'].value;
+  var flag=true;
+  if(x==null||x=="") 
+  {
+    $("#loginform_username").addClass("error");
+    flag=false;
+  }
+  else $("#loginform_username").removeClass("error");
+  x=document.forms['loginForm']['pwd'].value;
+  if(x.length<6)
+  {
+    $("#loginform_pwd").addClass("error");
+    flag=false;
+  }
+  else $("#loginform_pwd").removeClass("error");
+  if(!flag) document.getElementById("login_error_info").innerHTML="* invalid form submission";
+  //$("#login_error_info").addClass("error");
+  return flag;
+}
+function validateSignUpForm()
+{
+  var x=document.forms['signupForm']['username'].value;
+  var flag=true;
+  if(x==null||x=="") 
+  {
+    $("#signupform_username").addClass("error");
+    flag=false;
+  }
+  else $("#signupform_username").removeClass("error");
+
+  x=document.forms['signupForm']['name'].value;
+  if(x==null||x=="") 
+  {
+    $("#signupform_name").addClass("error");
+    flag=false;
+  }
+  else $("#signupform_name").removeClass("error");
+
+  x=document.forms['signupForm']['pwd'].value;
+  if(x.length<6)
+  {
+    $("#signupform_pwd").addClass("error");
+    flag=false;
+  }
+  else $("#signupform_pwd").removeClass("error");
+  if(!flag) document.getElementById("signup_error_info").innerHTML="* invalid form submission";
+  //$("#login_error_info").addClass("error");
+  return flag;
+}
 </script>
+
+<div id="myModal" class="reveal-modal">
+<form name="loginForm" action="PHP/login.php" method="POST" onsubmit="return validateLoginForm()">
+  <fieldset>
+    <legend>Login to continue</legend>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <label>Login Id</label>
+        <input id="loginform_username" type="text" placeholder="Enter login Id" name="username">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <label>Password</label>
+        <input id= "loginform_pwd" type="password" placeholder="Enter your password" name="pwd">
+      </div>
+    </div>
+
+
+    <button id="loginn_button">Login</button>
+    <font color="red"> <div id="login_error_info" class="error"></div></font>
+  </fieldset>
+</form>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="myModal1" class="reveal-modal">
+<form name="signupForm" action="PHP/register.php"  method= "POST" onsubmit="return validateSignUpForm()">
+  <fieldset>
+    <legend>Register Here</legend>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <label>Login Id</label>
+        <input id="signupform_username" type="text" placeholder="Enter login Id" name="username">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <label>Name</label>
+        <input id="signupform_name" type="text" placeholder="Enter Your Name" name="name">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-6 columns">
+        <label>Password(minimum 6 characters)</label>
+        <input id="signupform_pwd" type="password" placeholder="Enter your password" name="pwd">
+      </div>
+    </div>
+    <button>Register</button>
+    <font color="red"> <div id="signup_error_info" class="error"></div></font>
+  </fieldset>
+</form>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+
  </body>
 </html>
 
