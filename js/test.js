@@ -1,6 +1,9 @@
 
               //Lets create a simple particle system in HTML5 canvas and JS
-
+minRadius = 5;
+maxRadius = 50;
+minVel = -2;
+maxVel = 2;
                 //Initializing the canvas
                 var canvas = document.getElementById("canvas");
                 var ctx = canvas.getContext("2d");
@@ -28,7 +31,7 @@ var browser = new checkBrowser();
                 
                 //Lets create an array of words
                 var particles = [];
-                for(var i = 0; i < 10; i++)
+                for(var i = 0; i < 12; i++)
                 {
                     //This will add 10 words to the array with random positions
                     particles.push(new create_particle());
@@ -36,15 +39,58 @@ var browser = new checkBrowser();
                 
                 //Lets create a function which will help us to create multiple particles
                 function create_particle()
-                {                    var browser = new checkBrowser();
-                    	var H=browser.height; var W = browser.width;
-                    //Places the words at random positions on the canvas
-                    this.x = Math.random()*W; //Notice I am using the W again here with a random number between 0 and 1. 
-                    this.y = Math.random()*H; //Notice I am using the H again here with a random number between 0 and 1. 
-                    
-                    //Lets add random velocity to each particle. 
-                    this.vx = Math.random()*-1; // Change the number 50 to change the speed.  Lower is slower.
-                    this.vy = Math.random()*1;  // Change the number 50 to change the speed.  Lower is slower. 
+                {                 
+
+var browser = new checkBrowser();
+    this.radius = randomXToY(minRadius,maxRadius);
+    
+    //DETERMINES WHERE TO START OFF SCREEN, HAS TO BE THIS LENGTHY
+    if(betweenZeroAnd(2) == 1){
+        //ANYWHERE ON THE Y AXIS
+        this.y = randomXToY(0 - this.radius,browser.height + this.radius);
+        
+        if(betweenZeroAnd(2) == 1){
+            //LEFT SIDE
+            this.x = 0 - this.radius;
+        }else{
+            //RIGHT SIDE
+            this.x = browser.width + this.radius;
+        }
+    }else{
+        //ANYWHERE ON THE X AXIS
+        this.x = randomXToY(0 - this.radius,browser.width + this.radius);
+        if(betweenZeroAnd(2) == 1){
+            //TOP SIDE
+            this.y = 0 - this.radius;
+        }else{
+            //BOTTOM SIDE
+            this.y = browser.height + this.radius;
+        }
+    }
+    
+    if(this.x < 0){
+        this.vx = randomXToY(0,maxVel);
+    }else{
+        this.vx = randomXToY(minVel,minVel+maxVel);
+    }
+    
+    if(this.y < 0){
+        this.vy = randomXToY(0,maxVel);
+    }else{
+        this.vy = randomXToY(minVel,maxVel-minVel);
+    }
+    //ENSURE CIRCLE IS NOT STATIONARY;
+    if(this.vx == 0 && this.vy ==0){
+        this.vy = 1;
+    }
+
+
+
+
+
+
+
+
 
                 }
 
@@ -62,13 +108,13 @@ var browser = new checkBrowser();
                         //Creats the words
                         var p = particles[t];
                         //An array of text to use for each separate word particle
-                        var textText = ["while(1)alert(welcome);", "haskell","ruby","python","C","java","sql","void main(){}","select * from pclub","def pclub end"];
+                        var textText = ["while(1)alert(welcome);", "haskell","ruby","python","C","java","sql","void main(){}","select * from pclub","def pclub end","printf('Hello World');","C++"];
                         
                         //An array of colors to use with each fill or stroke
-                        var texttheme = ["#199BFF","#B1B260","#FCFF00","#CC9897","#B20C09","#199BFF","#B1B260","#FCFF00","#CC9897","#B20C09","#FFFFFF"];
+                        var texttheme = ["#199BFF","#B1B260","#FCFF00","#CC9897","#B20C09","#199BFF","#B1B260","#FCFF00","#CC9897","#B20C09","#FFFFFF","#199BFF","#FCFF00"];
                         
                         //An array of Google Web Fonts 
-                        var textfont = ["Molle","Fascinate Inline","Skranji","Just Me Again Down Here","Stalinist One","Kavoon","Berkshire Swash","Henny Penny","Butcherman","Audiowide"];
+                        var textfont = ["Molle","Fascinate Inline","Skranji","Just Me Again Down Here","Stalinist One","Kavoon","Berkshire Swash","Henny Penny","Butcherman","Audiowide","Berkshire Swash","Just Me Again Down Here"];
                         
                         //This is the size of the text combined with the type of font.
                         //The textfont[t] means that it will choose the font at that place in the font array as t is counted 
@@ -110,4 +156,15 @@ var browser = new checkBrowser();
                 setInterval(clearf, 40);
                 //Draw interval fires the function that draws the words on the canvas
                 setInterval(draw, 40);
+
+
+                function betweenZeroAnd(num){
+return Math.floor(Math.random()*(num))
+}
+
+//RETURNS NUMBER BETWEEN X AND Y, FLOAT VAL IS DECIMAL PLACES
+function randomXToY(minVal,maxVal,floatVal){
+  var randVal = minVal+(Math.random()*(maxVal-minVal));
+  return typeof floatVal=='undefined'?Math.round(randVal):randVal.toFixed(floatVal);
+}
 
