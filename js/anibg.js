@@ -12,12 +12,12 @@ function AniBg(canvasId, bgImg) {
 	backgroundImage.src = bgImg;
 	
 	var colors = new Array();
-	colors.push(new Color(200, 160, 150));
-	colors.push(new Color(230, 160, 90));
-	colors.push(new Color(230, 240, 90));
-	colors.push(new Color(100, 240, 190));
-	colors.push(new Color(100, 170, 220));
-	colors.push(new Color(200, 100, 220));
+	colors.push(new Color(102, 153, 153));
+	colors.push(new Color(163, 194,194));
+	colors.push(new Color(148, 148, 112));
+	colors.push(new Color(180, 180, 155));
+	colors.push(new Color(216, 216, 160));
+	colors.push(new Color(72, 72, 65));
 	
 	var nextColorIndex = 0;
 	var activeColor = colors[nextColorIndex++];

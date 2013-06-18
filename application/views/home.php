@@ -15,17 +15,34 @@
   <script src="js/vendor/custom.modernizr.js"></script>
   <script src="js/vendor/jquery.js"></script>
 
-
 </head>
 <body>
-    <canvas id="canvas" style="position:absolute; z-index:1; left:0px; top:0px" height="0px" width="0px"></canvas>
-    <script type="text/javascript" src="js/bubbles.js"></script>
-    <div id="content">
-  robbin
+ <canvas id="canvas" style="position:absolute; z-index:1; left:0px; top:0px" height="0px" width="0px";opacity:0.6;></canvas>
+   <script src="js/test.js"></script>
+   <div class="row">
+  <div class="large-6 columns"><span class="secondary label"><h1 class="subheading">P-CLUB</h1></span></div>
+  <div class="large-6 columns">
+<ul class="inline-list" style="float:right;">
+  <li><a href="#">Login</a></li>
+  <li><a href="#">Register</a></li>
+</ul>
 
-
-
+  </div>
 </div>
+<div class="button-bar">
+  <ul class="button-group">
+    <li><a href="#" class="large button success">Home</a></li>
+    <li><a href="#" class="large button ">Forum</a></li>
+    <li><a href="#" class="large button ">Online Judge</a></li>
+  </ul>
+  <ul class="button-group">
+    <li><a href="#" class="large button">Projects</a></li>
+    <li><a href="#" class="large button">Achivements</a></li>
+    <li><a href="#" class="large button">Contact</a></li>
+  </ul>
+</div>
+<hr id="new">
+
 
 
    <script>
@@ -52,10 +69,8 @@
     $(document).foundation();
   </script>
   <script>
-$('body').css('background-image', 'url("img/back.png")');
-
-  </script>
-
+$('body').css('background-image', 'url(img/new.png")');
+</script>
  </body>
 </html>
 
