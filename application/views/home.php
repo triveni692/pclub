@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
   <title>Welcome to P-Club</title>
-
+<style>#canvas { background:url(img/back.png) }</style>
   <!-- If you are using CSS version, only link these 2 files, you may add app.css to use for your overrides if you like. -->
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/foundation.css" />
@@ -17,7 +17,7 @@
 
 </head>
 <body>
- <canvas id="canvas" style="position:absolute; z-index:1; left:0px; top:0px" height="0px" width="0px";opacity:0.6;></canvas>
+ <canvas id="canvas" style="position:absolute; left:0px; top:0px" height="0px" width="0px";opacity:0.7;></canvas>
    <script src="js/test.js"></script>
    <div class="row">
   <div class="large-6 columns"><span class="secondary label"><h1 class="subheading">P-CLUB</h1></span></div>
@@ -31,9 +31,9 @@
 </div>
 <div class="button-bar">
   <ul class="button-group">
-    <li><a href="#" class="large button success">Home</a></li>
-    <li><a href="#" class="large button ">Forum</a></li>
-    <li><a href="#" class="large button ">Online Judge</a></li>
+    <li><a href="#" class="large button alert">Home</a></li>
+    <li><a href="#" class="large button secondary ">Forum</a></li>
+    <li><a href="#" class="large button success">Online Judge</a></li>
   </ul>
   <ul class="button-group">
     <li><a href="#" class="large button">Projects</a></li>
@@ -41,7 +41,10 @@
     <li><a href="#" class="large button">Contact</a></li>
   </ul>
 </div>
-<hr id="new">
+<hr>
+
+
+
 
 
 
