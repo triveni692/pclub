@@ -6,6 +6,7 @@ class Home extends CI_Controller {
  function __construct()
  {
    parent::__construct();
+   $this->load->model('event');
  }
 
  function index()
@@ -16,11 +17,13 @@ class Home extends CI_Controller {
      $data['username'] = $session_data['username'];
      $data['name'] = $session_data['name'];
      $data['status']="login";
+     $data['event'] = $this->event->get_event();
      $this->load->view('home', $data);
    }
    else
    {
      $data['status']="logout";
+     $data['event'] = $this->event->get_event();
      $this->load->view('home', $data);
    }
  }

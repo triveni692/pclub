@@ -89,7 +89,7 @@ var browser = new checkBrowser();
                     for(var t = 0; t < particles.length; t++) 
                     {
                         var p = particles[t];
-                        var textText = ["while(1)alert(welcome);", "haskell","ruby","python","C","java","sql","void main(){}","select * from pclub","def pclub end","printf('Hello World');","C++"];
+                        var textText = ["JAVA", "haskell","ruby","python","C","PHP","Ruby","VB","C#","Scala","Perl","C++"];
                         var texttheme = ["#199BFF","#B1B260","#FCFF00","#CC9897","#B20C09","#199BFF","#B1B260","#FCFF00","#CC9897","#B20C09","#FFFFFF","#199BFF","#FCFF00"];
                         var textfont = ["Molle","Fascinate Inline","Skranji","Just Me Again Down Here","Stalinist One","Kavoon","Berkshire Swash","Henny Penny","Butcherman","Audiowide","Berkshire Swash","Just Me Again Down Here"];
                         

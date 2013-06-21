@@ -1,4 +1,4 @@
-structures od tables
+structures of tables
 
 *users*
 id
@@ -6,3 +6,19 @@ name
 loginid
 password(md5)
 emailid
+
+
+*event*
+id
+title
+date
+description
+venue
+
+*tutorial*
+id
+topic
+description
+link
+
+

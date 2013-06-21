@@ -6,6 +6,7 @@ class VerifyLogin extends CI_Controller {
  {
    parent::__construct();
    $this->load->model('user','',TRUE);
+      $this->load->model('event');
  }
 
  function index()
@@ -20,8 +21,9 @@ class VerifyLogin extends CI_Controller {
    {
      //Field validation failed.&nbsp; User redirected to login page
 
-
+     $data['event'] = $this->event->get_event();
          $data['status']="wrong";
+         
      $this->load->view('home', $data);
    }
    else
