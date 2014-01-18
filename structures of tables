@@ -9,10 +9,11 @@ emailid
 
 
 *event*
-id
-title
-date
-description
+id		tinyint(4)
+title	varchar(40)
+date  date
+time time
+description 
 venue
 
 *tutorial*
@@ -21,4 +22,21 @@ topic
 description
 link
 
+*project*
+id
+name
+link
+
+*contact*
+id
+name
+pic
+phone
+address
+post
+
+*achivement*
+id
+topic
+description
 
